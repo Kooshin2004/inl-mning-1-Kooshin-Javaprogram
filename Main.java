@@ -1,25 +1,23 @@
-import java.util.Scanner;
+package se.iths.kooshin.tarningspel;
+
 import java.util.random.RandomGenerator;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ange förnamn för spelare 1: ");
-        String fName1 = scanner.nextLine();
-        System.out.print("Ange efternamn för spelare 1: ");
-        String lName1 = scanner.nextLine();
+
+        String fName1 = IO.readln("Ange förnamn för spelare 1: ");
+        String lName1= IO.readln("Ange efternamn för spelare 1: ");
+
 
         Player player1 = new Player(fName1, lName1);
 
-        System.out.print("Ange förnamn för spelare 2: ");
-        String fName2 = scanner.nextLine();
-        System.out.print("Ange efternamn för spelare 2: ");
-        String lName2 = scanner.nextLine();
+        String fName2 = IO.readln("Ange förnamn för spelare 1: ");
+        String lName2= IO.readln("Ange efternamn för spelare 1: ");
 
         Player player2 = new Player(fName2, lName2);
 
-        System.out.println("\n--- Spelet startar! ---");
+        System.out.println(" Spelet startar!");
 
         int roll1 = RandomGenerator.getDefault().nextInt(1, 7);
         System.out.println(player1.getFullName() + " slog: " + roll1);
@@ -37,7 +35,7 @@ public class Main {
         System.out.println(player2.getFullName() + " slog: " + roll4);
         player2.addToScore(roll4);
 
-        System.out.println("\n--- Resultat ---");
+        System.out.println("Resultat");
         System.out.println(player1.getFullName() + " fick totalt: " + player1.getScore());
         System.out.println(player2.getFullName() + " fick totalt: " + player2.getScore());
 
@@ -49,6 +47,6 @@ public class Main {
             System.out.println("Det blev oavgjort.");
         }
 
-        scanner.close();
+
     }
 }
