@@ -1,3 +1,5 @@
+package se.iths.kooshin.tarningspel;
+
 public class Player {
     private String firstName;
     private String lastName;
